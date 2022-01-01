@@ -1,37 +1,24 @@
-// const express = require('express')
-// const app = express()
-// var cors = require('cors')
+const express = require("express");
+const app = express();
 
-// app.use(cors())
+const bodyParser = require("body-parser");
+const { getItems } = require("../src/amazon");
+app.use(bodyParser.json());
 
-// const amazon = require('./amazon')
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,POST");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+});
 
-// const port = process.env.PORT || 4040
+app.listen(3000, async (req, res) => {
+    console.log(`Server listening on Port ${3000}`);
 
-
-// // app.get('/', async (req, res) => {
-// //     await res.send("coz")
-// // })
-
-
-
-// app.get('/:search', async (req, res) => {
-//     // get parameter from url
-//     let search = req.params.search
-
-
-//     let products_amazon = await amazon(search)
-
-
-
-//     // send all scraping data to client
-//     await res.send({
-//         amazon: products_amazon
-//     })
-// })
-
-
-
-// app.listen(port, () => {
-//     console.log(`server runs on http://localhost:${port}`)
-// })
+    app.get("/items", async (req, res) => {
+        getItems("playstation")
+    });
+});
