@@ -69,4 +69,5 @@ const getItems = (itemsname) => {
     }
 
 }
+getItems("Karim Salem")
 module.exports = { getItems }
