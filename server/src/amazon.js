@@ -64,9 +64,11 @@ const getItems = (itemsname) => {
             return grabprices;
 
         })()
+
     } catch (err) {
         console.error(err)
     }
+
 
 }
 module.exports = { getItems }
