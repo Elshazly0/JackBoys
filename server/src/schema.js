@@ -26,5 +26,21 @@ const ProductSchema = new Schema({
 });
 
 
+const HerosSchema = new Schema({
+    Name: {
+        type: String,
+        required: true
+    }
+
+});
+
+
+
+const Hero = mongoose.model('Hero', HerosSchema);
+module.exports = Hero;
+
+
+
+
 const Product = mongoose.model('Product', ProductSchema);
 module.exports = Product;

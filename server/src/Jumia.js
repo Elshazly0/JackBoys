@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer')
-const screenshot = 'amazon.png'
+const screenshot = 'jumia.png'
 const Product = require('./schema')
 
 const getItems = (itemsname) => {
@@ -11,25 +11,21 @@ const getItems = (itemsname) => {
                 width: 1920,
                 height: 1080
             })
-            await page.goto('https://www.amazon.com/', { waitUntil: 'networkidle2' })
-            await page.type('#twotabsearchtextbox', itemsname)
-            await page.click('#nav-search-submit-button', { clickCount: 1, waitUntil: 'load' })
-            await page.waitForSelector('.s-image')
+            await page.goto('https://www.jumia.com/', { waitUntil: 'networkidle2' })
+            await page.type('#fi-q', itemsname)
+            await page.keyboard.press('Enter');
+            await page.waitForSelector('.img-c')
             await page.waitForTimeout(2000)
             await page.screenshot({ path: screenshot })
-            // pullovers = [];
-            //pullovers = await page.$$('.a-offscreen')
-            //await pullovers[2].click({ clickCount: 1, waitUntil: 'load' })
-            //await page.waitForSelector('.imgTagWrapper')
 
-            //await page.screenshot({ path: screenshots })
+
             const grabprices = await page.evaluate(() => {
 
 
 
-                const nametag = document.querySelectorAll('.a-size-medium.a-color-base.a-text-normal')
+                const nametag = document.querySelectorAll('.name')
 
-                const pricetag = document.querySelectorAll('.a-price-whole')
+                const pricetag = document.querySelectorAll('.prc')
 
                 let prices = []
                 pricetag.forEach((price) => {
@@ -43,8 +39,7 @@ const getItems = (itemsname) => {
 
                 for (let i = 0; i < names.length; i++) {
                     products.push({ Name: names[i], Price: prices[i] });
-                    // const Productb = new Product(products[i]);
-                    // Productb.save();
+
                 }
 
 
@@ -71,4 +66,5 @@ const getItems = (itemsname) => {
 
 
 }
+getItems("play")
 module.exports = { getItems }
