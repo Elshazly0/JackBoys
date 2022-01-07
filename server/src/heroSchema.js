@@ -11,20 +11,6 @@ mongoose.connect(DBURl, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 
-const ProductSchema = new Schema({
-    Name: {
-        type: String,
-        required: true
-    },
-    Price: {
-        type: String,
-        required: false
-    }
-
-
-
-});
-
 
 const HerosSchema = new Schema({
     Name: {
@@ -41,6 +27,3 @@ module.exports = Hero;
 
 
 
-
-const Product = mongoose.model('Product', ProductSchema);
-module.exports = Product;
