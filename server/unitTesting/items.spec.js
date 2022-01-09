@@ -5,15 +5,16 @@ const dotajson = require("../unitTesting/dota.api.stub")
 const app = require('../src/index') // Link to your server file
 const supertest = require('supertest')
 const request = supertest(app)
+const axios = require('axios')
+const itemsjson = require('../unitTesting/items.api.stub.json')
+jest.setTimeout(90000)
 
 describe('testing the Heros API ', () => {
-    jest.setTimeout(80000)
 
     test('Testing the Heros', async (
     ) => {
         const resultss = await DotagetNames();
         expect(resultss).toEqual(dotajson);
-
 
 
     })
@@ -22,7 +23,6 @@ describe('testing the Heros API ', () => {
 
 
 describe('testing the scrapping API ', () => {
-    jest.setTimeout(80000)
 
     test('Testing the scrapping', async (
     ) => {
@@ -38,7 +38,6 @@ describe('testing the scrapping API ', () => {
 
 
 describe('testing the scrapping API ', () => {
-    jest.setTimeout(80000)
 
     test('Testing the scrapping', async (
     ) => {
@@ -46,9 +45,19 @@ describe('testing the scrapping API ', () => {
 
         expect(results).toBeDefined();
 
-
-
     })
-
 })
+
+// describe('testing the items API ', () => {
+
+//     test('Testing the items', async (
+//     ) => {
+//         const results = await axios.get('http://localhost:3000/items');
+
+//         expect(results.data).toEqual(itemsjson);
+
+//     })
+
+
+// })
 

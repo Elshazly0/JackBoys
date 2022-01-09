@@ -34,6 +34,28 @@ app.listen(3000, async (req, res) => {
 
     });
 
+
+    app.get("/amazonsearch/:name", async (req, res) => {
+        const itemName = req.params.name
+
+
+        return res.status(200).json((await getamazonItems(itemName)));
+
+
+
+    });
+
+    app.get("/jumiasearch/:name", async (req, res) => {
+        const itemName = req.params.name
+
+
+        return res.status(200).json((await getjumiaItems(itemName)));
+
+
+
+    });
+
+
     app.get("/heros", async (req, res) => {
 
 
@@ -45,16 +67,16 @@ app.listen(3000, async (req, res) => {
     });
 
 
-    app.get("/hero/:Char", async (req, res) => {
-        const Char = req.params.Char
+    // app.get("/hero/:Char", async (req, res) => {
+    //     const Char = req.params.Char
 
 
 
-        return res.status(200).json([await DotagetNames(Char)]);
+    //     return res.status(200).json([await DotagetNames(Char)]);
 
 
 
-    });
+    // });
 
 
 

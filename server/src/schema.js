@@ -14,7 +14,7 @@ mongoose.connect(DBURl, { useNewUrlParser: true, useUnifiedTopology: true })
 const ProductSchema = new Schema({
     Name: {
         type: String,
-        required: true
+        required: false
     },
     Price: {
         type: String,
