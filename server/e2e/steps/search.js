@@ -3,14 +3,14 @@ const assert = require('assert').strict
 const axios = require('axios');
 var { setDefaultTimeout } = require('@cucumber/cucumber');
 setDefaultTimeout(40 * 1000);
-/******** SCENARIO #1 ********/
+/** SCENARIO #1 **/
 Given("a string {string}", function (itemsname) {
     this.context["itemsname"] = itemsname;
 });
 
 
 When("I send GET request to get heros", async function () {
-    this.context["response"] = await axios.get("http://localhost:3000/heros");
+    this.context["response"] = await axios.get(`http://localhost:3000/heros`);
     console.log(this.context["response"].data[0])
 
 });
