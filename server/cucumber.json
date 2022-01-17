@@ -1,127 +1,5 @@
 [
   {
-    "description": "    search for items.",
-    "elements": [
-      {
-        "description": "",
-        "id": "amazon;search-on-amazon",
-        "keyword": "Scenario Outline",
-        "line": 5,
-        "name": "search on amazon",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 6,
-            "name": "a string \"playstation\"",
-            "match": {
-              "location": "e2e\\steps\\search.js:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 9981699
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "I send GET request to search",
-            "match": {
-              "location": "e2e\\steps\\search.js:24"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 9263480999
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 8,
-            "name": "I get $50 PlayStation Store Gift Card [Digital Code] of items",
-            "match": {
-              "location": "e2e\\steps\\search.js:36"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2987700
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      }
-    ],
-    "id": "amazon",
-    "line": 2,
-    "keyword": "Feature",
-    "name": "Amazon",
-    "tags": [],
-    "uri": "e2e\\feature\\amazon.feature"
-  },
-  {
-    "description": "    search for items.",
-    "elements": [
-      {
-        "description": "",
-        "id": "jumia;search-on-jumia",
-        "keyword": "Scenario Outline",
-        "line": 5,
-        "name": "search on Jumia",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 6,
-            "name": "a string \"playstation\"",
-            "match": {
-              "location": "e2e\\steps\\search.js:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 10643699
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "I send GET request to Jumiasearch",
-            "match": {
-              "location": "e2e\\steps\\search.js:30"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 19209189400
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 8,
-            "name": "I get Sony PlayStation 5 Console of items",
-            "match": {
-              "location": "e2e\\steps\\search.js:36"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1615599
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      }
-    ],
-    "id": "jumia",
-    "line": 2,
-    "keyword": "Feature",
-    "name": "Jumia",
-    "tags": [],
-    "uri": "e2e\\feature\\Jumia.feature"
-  },
-  {
     "description": "    search for heros.",
     "elements": [
       {
@@ -141,20 +19,21 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10878048499
+              "duration": 19790651700
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 6,
-            "name": "I get ABADDON of heros",
+            "name": "I get ABADD of heros",
             "match": {
               "location": "e2e\\steps\\search.js:18"
             },
             "result": {
-              "status": "passed",
-              "duration": 5074000
+              "status": "failed",
+              "duration": 5728199,
+              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\u001b[32m+ actual\u001b[39m \u001b[31m- expected\u001b[39m\n\n\u001b[32m+\u001b[39m 'ABADDON'\n\u001b[31m-\u001b[39m 'ABADD'\n        ^\n    + expected - actual\n\n    -ABADDON\n    +ABADD\n\n    at CustomWorld.<anonymous> (C:\\Users\\Elshazly\\Desktop\\JackBoys\\server\\e2e\\steps\\search.js:19:12)"
             }
           }
         ],
