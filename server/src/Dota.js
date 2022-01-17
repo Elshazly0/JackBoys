@@ -20,7 +20,9 @@ async function DotagetNames() {
 
     const grabHeros = await page.evaluate(() => {
 
-
+        /*querySelectorAll() The Document method querySelectorAll() returns a static NodeList 
+                representing a list of the document's elements that match the specified group of selectors.
+        */
 
         const nametag = document.querySelectorAll('.herogridpage_HeroName_3N-bh')
 
@@ -28,10 +30,13 @@ async function DotagetNames() {
 
 
         let names = [];
-
+         /* 
+        The forEach() method calls a function for each element in an array
+        */
         nametag.forEach((name) => {
             names.push({ Name: name.innerText });
 
+             // we pushed names of heros in an array
 
 
         })
@@ -40,6 +45,9 @@ async function DotagetNames() {
 
     })
 
+        /*
+            for loop that saves products names and price
+        */
     const items = grabHeros;
     for (let i = 0; i < items.length; i++) {
 

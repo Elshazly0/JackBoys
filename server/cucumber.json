@@ -19,7 +19,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19790651700
+              "duration": 9473000000
             }
           },
           {
@@ -31,9 +31,8 @@
               "location": "e2e\\steps\\search.js:18"
             },
             "result": {
-              "status": "failed",
-              "duration": 5728199,
-              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\u001b[32m+ actual\u001b[39m \u001b[31m- expected\u001b[39m\n\n\u001b[32m+\u001b[39m 'ABADDON'\n\u001b[31m-\u001b[39m 'ABADD'\n        ^\n    + expected - actual\n\n    -ABADDON\n    +ABADD\n\n    at CustomWorld.<anonymous> (C:\\Users\\Elshazly\\Desktop\\JackBoys\\server\\e2e\\steps\\search.js:19:12)"
+              "status": "passed",
+              "duration": 5000000
             }
           }
         ],
